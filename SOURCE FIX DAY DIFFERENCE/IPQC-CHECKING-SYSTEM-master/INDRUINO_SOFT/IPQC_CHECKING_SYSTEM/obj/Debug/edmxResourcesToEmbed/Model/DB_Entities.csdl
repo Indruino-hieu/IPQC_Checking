@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_Entites" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="IPQC">
+    <Key>
+      <PropertyRef Name="PartNumber" />
+    </Key>
+    <Property Name="PartNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="SubmitPIC" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="IPQC1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="TimeSubmit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TimeRecive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ReleaseTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CheckingTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TotalTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Result" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="SystemControl">
+    <Key>
+      <PropertyRef Name="LocationExport" />
+    </Key>
+    <Property Name="LocationExport" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DB_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="IPQCs" EntityType="Self.IPQC" />
+    <EntitySet Name="SystemControls" EntityType="Self.SystemControl" />
+  </EntityContainer>
+</Schema>

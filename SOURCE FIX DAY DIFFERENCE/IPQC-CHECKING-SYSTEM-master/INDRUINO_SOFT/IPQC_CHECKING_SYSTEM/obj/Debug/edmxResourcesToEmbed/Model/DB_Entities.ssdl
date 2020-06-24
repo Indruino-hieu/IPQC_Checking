@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_Entites.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="IPQC">
+    <Key>
+      <PropertyRef Name="PartNumber" />
+    </Key>
+    <Property Name="PartNumber" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Type" Type="nchar" MaxLength="50" />
+    <Property Name="SubmitPIC" Type="nchar" MaxLength="20" />
+    <Property Name="IPQC" Type="nchar" MaxLength="20" />
+    <Property Name="TimeSubmit" Type="nchar" MaxLength="10" />
+    <Property Name="TimeRecive" Type="nchar" MaxLength="10" />
+    <Property Name="ReleaseTime" Type="nchar" MaxLength="10" />
+    <Property Name="CheckingTime" Type="nchar" MaxLength="10" />
+    <Property Name="TotalTime" Type="nchar" MaxLength="10" />
+    <Property Name="Result" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_IPQC_SYSTEM.dbo.SystemControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SystemControl">
+    <Key>
+      <PropertyRef Name="LocationExport" />
+    </Key>
+    <Property Name="LocationExport" Type="nchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="DB_EntitesStoreContainer">
+    <EntitySet Name="IPQC" EntityType="Self.IPQC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemControl" EntityType="Self.SystemControl" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SystemControl].[LocationExport] AS [LocationExport]
+    FROM [dbo].[SystemControl] AS [SystemControl]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

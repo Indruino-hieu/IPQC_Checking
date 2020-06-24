@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_Entites.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="IPQC">
+          <Key>
+            <PropertyRef Name="PartNumber" />
+          </Key>
+          <Property Name="PartNumber" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="Type" Type="nchar" MaxLength="50" />
+          <Property Name="SubmitPIC" Type="nchar" MaxLength="20" />
+          <Property Name="IPQC" Type="nchar" MaxLength="20" />
+          <Property Name="TimeSubmit" Type="nchar" MaxLength="10" />
+          <Property Name="TimeRecive" Type="nchar" MaxLength="10" />
+          <Property Name="ReleaseTime" Type="nchar" MaxLength="10" />
+          <Property Name="CheckingTime" Type="nchar" MaxLength="10" />
+          <Property Name="TotalTime" Type="nchar" MaxLength="10" />
+          <Property Name="Result" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DB_IPQC_SYSTEM.dbo.SystemControl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SystemControl">
+          <Key>
+            <PropertyRef Name="LocationExport" />
+          </Key>
+          <Property Name="LocationExport" Type="nchar" MaxLength="1000" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_EntitesStoreContainer">
+          <EntitySet Name="IPQC" EntityType="Self.IPQC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemControl" EntityType="Self.SystemControl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SystemControl].[LocationExport] AS [LocationExport]
+    FROM [dbo].[SystemControl] AS [SystemControl]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_Entites" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="IPQC">
+          <Key>
+            <PropertyRef Name="PartNumber" />
+          </Key>
+          <Property Name="PartNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="SubmitPIC" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="IPQC1" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <Property Name="TimeSubmit" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TimeRecive" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ReleaseTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CheckingTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="TotalTime" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Result" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SystemControl">
+          <Key>
+            <PropertyRef Name="LocationExport" />
+          </Key>
+          <Property Name="LocationExport" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="DB_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="IPQCs" EntityType="Self.IPQC" />
+          <EntitySet Name="SystemControls" EntityType="Self.SystemControl" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_EntitesStoreContainer" CdmEntityContainer="DB_Entities">
+          <EntitySetMapping Name="IPQCs">
+            <EntityTypeMapping TypeName="DB_Entites.IPQC">
+              <MappingFragment StoreEntitySet="IPQC">
+                <ScalarProperty Name="PartNumber" ColumnName="PartNumber" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="SubmitPIC" ColumnName="SubmitPIC" />
+                <ScalarProperty Name="IPQC1" ColumnName="IPQC" />
+                <ScalarProperty Name="TimeSubmit" ColumnName="TimeSubmit" />
+                <ScalarProperty Name="TimeRecive" ColumnName="TimeRecive" />
+                <ScalarProperty Name="ReleaseTime" ColumnName="ReleaseTime" />
+                <ScalarProperty Name="CheckingTime" ColumnName="CheckingTime" />
+                <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+                <ScalarProperty Name="Result" ColumnName="Result" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemControls">
+            <EntityTypeMapping TypeName="DB_Entites.SystemControl">
+              <MappingFragment StoreEntitySet="SystemControl">
+                <ScalarProperty Name="LocationExport" ColumnName="LocationExport" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

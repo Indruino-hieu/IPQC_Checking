@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DB_IPQC_SYSTEMModelStoreContainer" CdmEntityContainer="DB_IPQC_SYSTEMEntities1">
+    <EntitySetMapping Name="IPQCs">
+      <EntityTypeMapping TypeName="DB_IPQC_SYSTEMModel.IPQC">
+        <MappingFragment StoreEntitySet="IPQC">
+          <ScalarProperty Name="PartNumber" ColumnName="PartNumber" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="SubmitPIC" ColumnName="SubmitPIC" />
+          <ScalarProperty Name="IPQC1" ColumnName="IPQC" />
+          <ScalarProperty Name="TimeSubmit" ColumnName="TimeSubmit" />
+          <ScalarProperty Name="TimeRecive" ColumnName="TimeRecive" />
+          <ScalarProperty Name="ReleaseTime" ColumnName="ReleaseTime" />
+          <ScalarProperty Name="CheckingTime" ColumnName="CheckingTime" />
+          <ScalarProperty Name="TotalTime" ColumnName="TotalTime" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemControls">
+      <EntityTypeMapping TypeName="DB_IPQC_SYSTEMModel.SystemControl">
+        <MappingFragment StoreEntitySet="SystemControl">
+          <ScalarProperty Name="LocationExport" ColumnName="LocationExport" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
