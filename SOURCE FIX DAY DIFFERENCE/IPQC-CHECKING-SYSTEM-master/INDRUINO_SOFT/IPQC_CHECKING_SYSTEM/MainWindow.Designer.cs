@@ -82,7 +82,7 @@
             this.lbl_CurrentDate.Name = "lbl_CurrentDate";
             this.lbl_CurrentDate.Size = new System.Drawing.Size(133, 23);
             this.lbl_CurrentDate.TabIndex = 5;
-            this.lbl_CurrentDate.Text = "Date: 20/10/2019";
+            this.lbl_CurrentDate.Text = "NGÀY: 20/10/2019";
             // 
             // dgvData
             // 
@@ -147,35 +147,35 @@
             // PartNumber
             // 
             this.PartNumber.DataPropertyName = "PartNumber";
-            this.PartNumber.HeaderText = "PART NUMBER";
+            this.PartNumber.HeaderText = "MÃ HÀNG";
             this.PartNumber.Name = "PartNumber";
             this.PartNumber.ReadOnly = true;
             // 
             // TimeIn
             // 
             this.TimeIn.DataPropertyName = "TimeSubmit";
-            this.TimeIn.HeaderText = "TIME IN";
+            this.TimeIn.HeaderText = "THỜI GIAN VÀO";
             this.TimeIn.Name = "TimeIn";
             this.TimeIn.ReadOnly = true;
             // 
             // Type
             // 
             this.Type.DataPropertyName = "Type";
-            this.Type.HeaderText = "TYPE";
+            this.Type.HeaderText = "LOẠI MẨU";
             this.Type.Name = "Type";
             this.Type.ReadOnly = true;
             // 
             // Result
             // 
             this.Result.DataPropertyName = "Result";
-            this.Result.HeaderText = "RESULT";
+            this.Result.HeaderText = "KẾT QUẢ";
             this.Result.Name = "Result";
             this.Result.ReadOnly = true;
             // 
             // Status
             // 
             this.Status.DataPropertyName = "Status";
-            this.Status.HeaderText = "STATUS";
+            this.Status.HeaderText = "TÌNH TRẠNG";
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
             // 

@@ -8,7 +8,7 @@ namespace IPQC_CHECKING_SYSTEM.Common
 {
     class TYPE
     {
-        public static string BUY_OFF_SAMPLE = "Buy off sample";
-        public static string REPAIR = "Repair";
+        public static string BUY_OFF_SAMPLE = "MẨU ĐẦU TIÊN";
+        public static string REPAIR = "MẨU SỬA KHUÔN";
     }
 }

@@ -76,7 +76,7 @@ namespace IPQC_CHECKING_SYSTEM
             InitializeComponent();
             readExcelFile();
             Console.WriteLine(DateTime.Now);
-            lbl_CurrentDate.Text = "Date: " + DateTime.Now.Day + "/" + DateTime.Now.Month + "/" +DateTime.Now.Year;
+            lbl_CurrentDate.Text = "NGÀY: " + DateTime.Now.Day + "/" + DateTime.Now.Month + "/" +DateTime.Now.Year;
 
           
 
@@ -672,17 +672,17 @@ namespace IPQC_CHECKING_SYSTEM
                     exist_file = true;
                 }
 
-                MySheet.Cells[1, 1] = "PART CODE";
-                MySheet.Cells[1, 2] = "TYPE";
-                MySheet.Cells[1, 3] = "SUBMIT P.I.C";
-                MySheet.Cells[1, 4] = "IPQC";
-                MySheet.Cells[1, 5] = "TIMESUBIT";
-                MySheet.Cells[1, 6] = "TIME START";
-                MySheet.Cells[1, 7] = "RELEASE TIME";
-                MySheet.Cells[1, 8] = "REPAIR TIME";
-                MySheet.Cells[1, 9] = "CHECKING TIME";
-                MySheet.Cells[1, 10] = "TOTAL TIME";
-                MySheet.Cells[1, 11] = "RESULT";
+                MySheet.Cells[1, 1] = "MÃ HÀNG";
+                MySheet.Cells[1, 2] = "LOẠI MẨU";
+                MySheet.Cells[1, 3] = "NGƯỜI GIAO MẨU";
+                MySheet.Cells[1, 4] = "NGƯỜI KIỂM";
+                MySheet.Cells[1, 5] = "THỜI GIAN VÀO";
+                MySheet.Cells[1, 6] = "THỜI GIAN NHẬN";
+                MySheet.Cells[1, 7] = "THỜI GIAN HOÀN THÀNH";
+                MySheet.Cells[1, 8] = "THỜI GIAN SỬA CHỮA";
+                MySheet.Cells[1, 9] = "THỜI GIAN KIỂM TRA";
+                MySheet.Cells[1, 10] = "TỔNG THỜI GIAN XỬ LÝ";
+                MySheet.Cells[1, 11] = "KẾT QUẢ";
 
                 MySheet.get_Range("A1", "K1").Font.Bold = true;
                 MySheet.get_Range("A1", "K1").VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
